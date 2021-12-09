@@ -1,0 +1,39 @@
+<view class="">
+  <view class="">
+
+    <view class="sort-item-wrap">
+      <view class="sort-item-title">抽奖状态</view>
+      <view class="sort-item-list">
+        <view a:for="{{statusList}}" a:for-item="item" a:for-index="index" a:key="*this" class="sort-name {{formSearch.lucky_status == index ? 'selected-item' : ''}}" onTap='handleLuckyStatusFilter' data-index='{{index}}'>{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+   <view >
+      <table a:if="{{formSearch.lucky_status==1}}" class="" dataSource="{{list}}" loading="{{loading}}">
+    <table-column title="编号" dataIndex="index">
+      <text slot-scope="row">{{row.index+1}}</text>
+    </table-column>
+    <table-column title="中奖客户" dataIndex="buyer_pin" />
+      <table-column title="发奖状态" dataIndex="send_state">
+      <text slot-scope="row">{{row.record.send_state?'正常发放':'未发放'}}</text>
+    </table-column>
+    <table-column title="所用规则" dataIndex="rule_type_name" />  
+    <table-column title="奖品名称" dataIndex="award_title" />
+    <table-column title="中奖时间" dataIndex="gmt_create" />
+  </table>
+  <table a:else class="mt10" dataSource="{{list}}" loading="{{loading}}">
+    <table-column title="编号" dataIndex="index">
+      <text slot-scope="row">{{row.index+1}}</text>
+    </table-column>
+    <table-column title="抽奖客户" dataIndex="buyer_pin" />
+    <table-column title="所用规则" dataIndex="rule_type_name" />
+    <table-column title="抽奖状态" dataIndex="lucky_status">
+      <text slot-scope="row">{{row.record.lucky_status?'中奖':'未中奖'}}</text>
+    </table-column>
+    <table-column title="抽奖时间" dataIndex="gmt_create" />
+  </table>
+  <view class="right mt10">
+    <pagination defaultCurrent="{{1}}" total="{{total}}" onChange="onPageSizeChange" size="medium" />
+  </view>
+   </view>
+</view>

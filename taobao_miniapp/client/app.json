@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/myaward/myaward",
+    "pages/share/share",
+    "pages/win/win",
+    "pages/detail/detail",
+    "pages/web/web",
+    "pages/myaward/myaward",
+    "pages/noAuth/noAuth"
+  ],
+  "window": {
+    "showNavigationBarLogo": false,
+    "enableSkia": false
+  }
+}

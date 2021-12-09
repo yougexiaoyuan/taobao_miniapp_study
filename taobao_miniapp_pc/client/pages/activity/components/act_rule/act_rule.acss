@@ -1,0 +1,184 @@
+.ivu-row-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.ivu-col-span-8 {
+    display: block;
+    width: 33.33333333%;
+}
+.ivu-col-span-7 {
+    display: block;
+    width: 33%;
+}
+.text-center {
+    text-align: center;
+}
+.ivu-col-span-10 {
+    display: block;
+    width: 47.66666667%;
+    float: left;
+    flex: 0 0 auto;
+}
+.ivu-col-span-cus {
+    display: block;
+    width: 232px;
+    float: left;
+    flex: 0 0 auto;
+}
+.ivu-col-span-14 {
+    display: block;
+    width: 50%;
+    float: left;
+    flex: 0 0 auto;
+}
+.ivu-card-bordered {
+    border: 1px solid #dcdee2;
+    border-color: #e8eaec;
+}
+.ivu-card {
+    display: block;
+    background: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+.ivu-card-head {
+    border-bottom: 1px solid #e8eaec;
+    padding: 14px 16px;
+    line-height: 1;
+}
+.ivu-card-extra {
+    position: absolute;
+    right: 16px;
+    top: 14px;
+}
+.font-red{
+  color:#f00;
+}
+.font-pointer{
+  cursor: pointer;
+}
+.font-style{
+  font-size: 14px;
+  color: #515a6e;
+}
+.font-size-16{
+  font-size: 16px;
+}
+
+.ivu-card-body {
+    padding: 16px;
+}
+.ivu-row {
+    position: relative;
+margin-left: -4px;
+    margin-right: -4px;
+    height: auto;
+    zoom: 1;
+    display: block;
+}
+.ivu-row:after, .ivu-row:before {
+    content: "";
+    display: table;
+}
+.ivu-row:after {
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+}
+.ivu-card-bordered {
+    border: 1px solid #dcdee2;
+    border-color: #e8eaec;
+}
+.rule_select {
+  margin-right:10px;
+
+width:83px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    box-shadow: grey;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+.rule_select:hover {
+  transform: scale(1.1);
+  border-left: 5px solid #66AAFF;
+  border-right: 5px solid #66AAFF;
+  background-color: #EFF6FF;
+}
+.selected_rule {
+    border-left: 5px solid #6af;
+    border-right: 5px solid #6af;
+    background-color: #eff6ff;
+}
+.custome-border{
+  border-left: 5px solid rgb(102, 170, 255);
+}
+.rule-number{
+  display: flex; align-items: center; justify-content: center;
+}
+.ivu-col-span-1 {
+    display: block;
+    width: 4.16666667%;
+}
+.ivu-col-span-22 {
+    display: block;
+    width: 91.66666667%;
+}
+.ivu-col-span-15 {
+    display: block;
+    width: 51.66666667%;
+}
+.ivu-col-span-1, .ivu-col-span-2, .ivu-col-span-3, .ivu-col-span-4, .ivu-col-span-5, .ivu-col-span-6, .ivu-col-span-7, .ivu-col-span-8, .ivu-col-span-9, .ivu-col-span-10, .ivu-col-span-11, .ivu-col-span-12, .ivu-col-span-13, .ivu-col-span-14, .ivu-col-span-15, .ivu-col-span-16, .ivu-col-span-17, .ivu-col-span-18, .ivu-col-span-19, .ivu-col-span-20, .ivu-col-span-21, .ivu-col-span-22, .ivu-col-span-23, .ivu-col-span-24 {
+    float: left;
+    flex: 0 0 auto;
+}
+.ivu-col-span-24 {
+    display: block;
+    width: 100%;
+}
+.ivu-col-span-cus-12 {  
+    display: block;
+    width: 50%;
+}
+.acea-row{
+  flex-wrap: wrap;
+}
+.iai-add-image__delete {
+    position: absolute;
+    font-size: 16px;
+    top: -8px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+  
+    border-radius: 50%;
+   
+    cursor: pointer;
+}
+.text {
+    color: #2d8cf0;
+    background: transparent;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    transition: color .2s ease;
+    margin-left: 10px;
+}
+.readonly {
+    background-color: #ccc;
+  }
+.readonly:hover{
+  transform:none;
+  border-left: 0;
+  border-right: 0;
+  background-color: #ccc;
+}

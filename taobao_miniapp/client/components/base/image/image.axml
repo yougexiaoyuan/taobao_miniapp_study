@@ -1,0 +1,4 @@
+<view>
+  <view onTap="handleClick" style="position:absolute;width:{{width}}rpx;height:{{height}}rpx;top:{{top}}rpx;left:{{left}}rpx;z-index:{{zindex}};background-image:url({{logoConfig}});background-size:100% 100%;background-repeat:no-repeat;background-color:{{bgColor}}">
+  </view>
+</view>

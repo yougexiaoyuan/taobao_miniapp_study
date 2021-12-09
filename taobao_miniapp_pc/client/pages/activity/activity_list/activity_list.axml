@@ -1,0 +1,60 @@
+<header></header>
+<view class="padding10">
+  <view style="background-color:#fff;padding:20px 20px 60px;">
+    <button class="custom-button-1" onTap="onCreate" type="primary">创建活动</button>
+    <text class="font-color font-size12 ml10">如果新增的活动没有显示，请点击左上角的刷新 或者 右边的刷新按钮。</text>
+    <button style="float:right;" class="custom-button-1 ml20" onTap="initData" type="primary">刷新</button>
+    <table class="mt20" dataSource="{{datasource}}" loading="{{loading}}">
+      <table-column title="活动编号" dataIndex="id" />
+      <table-column title="活动名称">
+        <view slot-scope="row"> {{row.record.lucky_title}}</view>
+      </table-column>
+     <table-column title="时间">
+        <view slot-scope="row"> {{row.record.start_date}}</view>
+        <view slot-scope="row"> {{row.record.end_date}}</view>
+      </table-column>
+      <table-column title="操作" dataIndex="action">
+        <button data-id="{{row.record.id}}" slot-scope="row" onTap="onEdit" class="custom-button-1" type="primary" text>编辑</button>
+        <!-- <button data-id="{{row.record.id}}" slot-scope="row" onTap="onLink" class="custom-button-1 ml10" type="primary" text>链接</button> -->
+        <button data-id="{{row.record.id}}" slot-scope="row" onTap="onData" class="custom-button-1 ml10" type="primary" text>数据</button>
+        <!--<button data-x="{{x}}" slot-scope="x" class="custom-button-1 ml10" type="primary" text>日志</button> -->
+        <button data-id="{{row.record.id}}" slot-scope="row" onTap="onDel" class="custom-button-1 ml10" type="primary" text>删除</button>
+      </table-column>
+    </table>
+    <!-- <view class="right mt10">
+      <pagination defaultCurrent="{{1}}" total="{{total}}" onChange="onPageSizeChange" size="medium" />
+    </view> -->
+  </view>
+  <view a:if="{{modalMa}}">
+    <view class="ivu-modal-mask" style="z-index: 1067;">
+    </view>
+    <view class="ivu-modal-wrap" style="z-index: 1067;">
+      <view class="ivu-modal" style="width: 400px;">
+        <view class="ivu-modal-content">
+          <view class="ivu-modal-header">
+            <view class="ivu-modal-header-inner">预览推广</view>
+          </view>
+          <view class="ivu-modal-body">
+            <view class="mt10 qrcode">
+              <image a:if="{{qrCodeImage != ''}}" src="data:image/png;base64,{{qrCodeImage}}" />
+            </view>
+            <view class="mt10 center">
+              <input value="{{qrUrl}}" />
+              <button class="custom-button-1 ml20" onTap="onCopyUrl">复制链接</button>
+            </view>
+            <view class="mt10 center">
+              <button class="custom-button-1" onTap="onGoShop" type="primary" text>去店铺装修</button>
+              <button class="custom-button-1 ml20" onTap="onGoHelp" type="primary" text>查看装修教程</button>
+            </view>
+          </view>
+          <view class="ivu-modal-footer">
+            <view>
+              <button class="custom-button-1 mr20" onTap="modalOnCancel" type="normal">取消</button>
+              <button class="custom-button-1" onTap="modalOnCancel" type="primary">确定</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

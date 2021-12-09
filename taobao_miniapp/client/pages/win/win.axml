@@ -1,0 +1,87 @@
+<view>
+
+  <tabs
+    tabs="{{tabs}}"
+    onTabClick="handleTabClick"
+    onChange="handleTabChange"
+    activeTab="{{activeTab}}"
+  >
+      <tab-content key="0">
+        <view class="tab-content" style="background:#DDD;margin-top:30rpx">
+          <view class="award-one" a:for="{{lucky}}" a:for-item="item">
+            <image src="{{item.AwardPicUrl}}"></image>
+            <view class="view1" style="font-size:16px;overflow:hidden;">{{item.AwardTitle}}</view>
+            <view class="view1" style="font-size:12px;color:#555">
+              <view class="date">{{item.my_date}}</view>
+              <view style="display: flex;align-items:center;height:100%;">
+              <button size="mini" class="yhqbtn" data-url="{{item.AwardUrl}}"  a:if="{{item.AwardType == 8}}" onTap="getYHQ">
+                领取
+              </button>
+            </view>
+              
+            </view>
+          </view>
+        </view>
+      </tab-content>
+
+      <tab-content key="1">
+        <view class="tab-content">
+          <view class="info-title">填写信息，便于发送奖品</view>
+          <view class="form-row">
+            <view class="form-row-label required">旺旺</view>
+            <view class="form-row-content">
+              <input class="input" type="text" value="{{BuyerNick}}" placeholder="旺旺登录昵称" onInput="inputBuyerNick"/>
+            </view>
+          </view>
+          <view class="form-row">
+            <view class="form-row-label required">姓名</view>
+            <view class="form-row-content">
+              <input class="input" type="text" value="{{RealName}}" placeholder="Your name"  onInput="inputRealName"/>
+            </view>
+          </view>
+          <view class="form-row">
+            <view class="form-row-label">性别</view>
+            <view class="form-row-content">
+              <radio-group class="radio-group" onChange="changeGender">
+                <label class="radio">
+                  <radio value="男" checked="{{Gender == '男'}}" />
+                  <text class="radio-text">男</text>
+                </label>
+                <label class="radio" style="margin-left:40rpx">
+                  <radio value="女" checked="{{Gender == '女'}}" />
+                  <text class="radio-text">女</text>
+                </label>
+              </radio-group>
+            </view>
+          </view>
+          <view class="form-row">
+            <view class="form-row-label required">电话</view>
+            <view class="form-row-content">
+              <input class="input" type="number" value="{{Tel}}" placeholder="Tel"  onInput="inputTel"/>
+            </view>
+          </view>
+          <view class="form-row">
+            <view class="form-row-label">邮箱</view>
+            <view class="form-row-content">
+              <input class="input" type="text" value="{{Email}}" placeholder="Email"  onInput="inputEmail"/>
+            </view>
+          </view>
+          <view class="form-row">
+            <view class="form-row-label">生日</view>
+            <view class="form-row-content">
+              <input class="input" type="text" value="{{BirthDay}}" placeholder="Birth day"  onInput="inputBirthDay"/>
+            </view>
+          </view>
+          <view class="form-row">
+            <view class="form-row-label required">地址</view>
+            <view class="form-row-content">
+              <textarea class="input" type="text" value="{{Address}}" placeholder="详细地址"  onInput="inputAddress"/>
+            </view>
+          </view>
+          <view class="form-row">
+            <button style="border-color:red;color:red" onTap="submitInfo">提交</button>
+          </view>
+        </view>
+      </tab-content>
+  </tabs>
+</view>

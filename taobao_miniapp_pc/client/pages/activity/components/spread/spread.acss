@@ -1,0 +1,73 @@
+.ivu-row-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.ivu-col-span-right {
+    display: block;
+}
+.ivu-col-span-left {
+    display: block;
+    width: 15%;
+}
+.ivu-modal-body-left{
+  float: left;
+}
+.ivu-modal-body-right{
+  float:right;
+padding:16px;
+}
+.ul{
+  height: 36px;
+  line-height: 36px;
+   text-align: center;
+   cursor: pointer;
+}
+.content{
+   border-left: 1px solid #dadada;
+   margin: 20px 0;
+}
+.qrcode{
+  width: 250px;
+  margin: 10px auto;
+}
+.qrcode image{
+  width: 250px;
+  height: 250px;
+}
+.shareActivity{
+  width: 250px;
+  margin: 10px auto;
+}
+.shareActivity image{
+  width: 250px;
+  height: 456px;
+}
+.center{
+  text-align: center;
+}
+.li{
+  height: 50px;
+  line-height: 50px;
+}
+.li:hover{
+  color: #3386F1;
+}
+.li.selected{
+  color: #3386F1;
+  background:#F0FAFF;
+  height:50px;
+  line-height:50px;
+  border-right:2px solid #2D8CF0;
+}
+.viewShow{
+  min-height: 360px;
+}
+.diy-color{
+  background:rgb(255, 80, 2) !important;
+height:40px !important;
+width:200px;
+margin-top:20px;
+border-radius:30px !important;
+}

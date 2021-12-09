@@ -1,0 +1,5 @@
+<view class="container">
+   
+      <rich-text nodes="{{memo_nodes}}" style="overflow:auto"></rich-text>
+     
+</view>

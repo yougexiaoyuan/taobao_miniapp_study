@@ -1,0 +1,23 @@
+<view class="mt20">
+  <view class="ivu-row-flex font-size14">
+    <view class="ivu-col-span-left">
+      <view class="ul">
+        <view a:for="{{titleArr}}" a:for-index="index" a:for-item="item" onTap="onMenu" data-index="{{item.id}}" class="li {{selectIndex== item.id?'selected':''}}">
+        {{item.title}}
+        </view>
+      </view>
+    </view>
+    <view class="content"></view>
+    <view class="ivu-col-span-right ">
+      <!-- 预览 -->
+      <view a:if="{{selectIndex==0}}" class="viewShow">
+        <view class="ivu-modal-body-right">
+          <view class="mt10 center">
+            <input value="{{qrUrl}}" />
+            <button class="custom-button-1 ml20" onTap="onCopyUrl">复制长链接</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

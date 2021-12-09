@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "header": "../activity/components/header/header"
+  }
+}

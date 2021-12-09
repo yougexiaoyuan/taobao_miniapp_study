@@ -1,0 +1,5 @@
+<view>
+  <view class="page">
+    <web-view src="https://www.yuque.com/books/share/18768ed1-544d-48ec-a707-7f2d27633693?#" onMessage="onmessage"></web-view>
+  </view>
+</view>

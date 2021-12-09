@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/activity/activity_list/activity_list",
+    "pages/activity/activity_form/activity_form",
+    "pages/activity/data_analyse/data_analyse",
+    "pages/user_help/user_help"
+  ],
+  "window": {
+    "defaultTitle": "互动靠手"
+  },
+  "tabBarEx": {
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "name": "首页",
+        "id": "index"
+      },
+
+      {
+        "pagePath": "pages/activity/activity_list/activity_list",
+        "name": "我的活动",
+        "id": "activity_list"
+      },
+      {
+        "qnLoadHide": true,
+        "pagePath": "pages/activity/activity_form/activity_form",
+        "name": "创建活动",
+        "id": "create_activity_form"
+      },
+      {
+        "qnLoadHide": true,
+        "pagePath": "pages/activity/data_analyse/data_analyse",
+        "name": "数据分析",
+        "id": "data_analyse"
+      }
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+<view style="text-align:center;font-size:28rpx;width:90%;margin:0 auto;line-height:160rpx;">
+  很抱歉，您没有授权，所以无法使用小程序，谢谢理解
+  <button style="border-color:red;color:red;" onTap="goExit" class="submit">安全退出</button>
+</view>

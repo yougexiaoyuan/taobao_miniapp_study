@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="buttons">
+    <button style="background:#b32e2b" onTap="shareActivity">分享活动</button>
+    <!-- <button style="background:#ed702d" onTap="shareShop">分享店铺</button> -->
+  </view>
+  <view style="font-size:38rpx;text-align:center">分享下列商品，获取抽奖机会</view>
+  <view class="goods">
+    <view a:if="{{goods.length == 0}}" class="gotoshop">
+      <button size="mini" type="ghost" onTap="openShop">进店购买</button>
+    </view>
+    <view a:else >
+      <!-- <view class="goodsTips">分享下列宝贝，获得抽奖机会</view> -->
+      <view class="one" a:for="{{goods}}" a:for-item="item">
+        <image src="{{item.GoodsPic}}" onTap="openGoods" data-id="{{item.GoodsId}}"></image>
+        <view class="titleandbutton">
+          <view class="titlek">
+            <view class="title" onTap="openGoods" data-id="{{item.GoodsId}}">{{item.GoodsTitle}}</view>
+          </view>
+          <!--<button size="mini" onTap="openGoods" data-id="{{item.GoodsId}}">去购买</button> -->
+          <button size="mini" onTap="shareGoods" data-id="{{item.GoodsId}}"> 分 享</button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--<view class="goods"><view class="one" a:for="{{goods}}" a:for-item="item"><image src="{{item.GoodsPic}}" onTap="openGoods" data-id="{{item.GoodsId}}"></image><view onTap="openGoods" onTap="openGoods" data-id="{{item.GoodsId}}">{{item.GoodsTitle}}</view><button size="mini" onTap="shareGoods" data-id="{{item.GoodsId}}">分享</button></view></view> -->
+</view>

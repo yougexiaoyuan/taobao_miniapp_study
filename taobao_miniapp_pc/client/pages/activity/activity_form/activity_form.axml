@@ -1,0 +1,46 @@
+<header></header>
+<view class="padding10">
+  <view class="activeTab flex">
+    <view onTap="tabClick" data-tab="base" class="commTab flex-1 {{selectTab=='base'?'checked':''}}">
+      <view class="commTabName">
+        <text style="">基本设置</text>
+      </view>
+    </view>
+    <view onTap="tabClick" data-tab="rule" class="commTab flex-1 {{selectTab=='rule'?'checked':''}}">
+      <view class="commTabName">
+        规则设置
+      </view>
+    </view>
+    <view onTap="tabClick" data-tab="award" class="commTab flex-1 {{selectTab=='award'?'checked':''}}">
+      <view class="commTabName">
+        奖品设置
+      </view>
+    </view>
+    <view onTap="tabClick" data-tab="spread" class="commTab flex-1 {{selectTab=='spread'?'checked':''}}">
+      <view class="commTabName">
+        预览推广
+      </view>
+    </view>
+  </view>
+  <view class="" style="background-color:#fff;">
+    <view class="">
+      <view a:if="{{selectTab=='base'}}">
+        <base onHandleTab="handleTab" actId="{{ actId }}"></base>
+      </view>
+      <view a:if="{{selectTab=='rule'}}">
+        <follow_rule onHandleTab="handleTab" a:if="{{gametype=='607'}}" actId="{{ actId }}"></follow_rule>
+        <rule onHandleTab="handleTab" a:else actId="{{ actId }}"></rule>
+      </view>
+      <view a:if="{{selectTab=='award'}}">
+        <follow_award onHandleTab="handleTab" a:if="{{gametype=='607'}}" actId="{{ actId }}"></follow_award>
+        <award onHandleTab="handleTab" a:else actId="{{ actId }}"></award>
+      </view>
+      <view a:if="{{selectTab=='diy'}}">
+        <diy actId="{{ actId }}"></diy>
+      </view>
+      <view a:if="{{selectTab=='spread'}}">
+        <spread onHandleTab="handleTab" actId="{{ actId }}"></spread>
+      </view>
+    </view>
+  </view>
+</view>

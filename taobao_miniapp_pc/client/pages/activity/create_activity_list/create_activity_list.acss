@@ -1,0 +1,134 @@
+.ivu-card{
+  display: block;
+  background: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  position: relative;
+  transition: all .2s ease-in-out;
+}
+.ivu-card-bordered{
+  border: 1px solid #dcdee2;
+  border-color: #e8eaec;
+}
+.ivu-card-body{
+  padding: 16px;
+}
+
+.sort-table{
+    background: #fff;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 5%);
+    border-radius: 4px;
+}
+.sort-item-wrap{
+  overflow:hidden
+}
+.sort-item-title{
+  float: left;
+  margin-left:20px;
+  color: #3b3b3b;
+  font-size: 13px;
+  font-weight: 700;
+  height: 58px;
+  width: 55px;
+  line-height: 58px;
+  /* text-align: center; */
+}
+.sort-item-list{
+  border-bottom: 1px solid #eee;
+  margin-left: 100px;
+  margin-right: 24px;
+  padding: 14px 64px 6px 0;
+  box-sizing: border-box;
+}
+.sort-name{
+  display:inline-block;
+  padding: 5px 10px 6px;
+  font-size: 13px;
+  margin: 0 2px 8px;
+  color: #666;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.selected-item {
+  color: #3164ff !important;
+}
+
+.public-box{
+  display: flex;
+  margin-top: 15px;
+  flex-flow: wrap;
+}
+.public-item{
+  padding: 13px;
+  display: flex;
+}
+.img_transition{
+  -webkit-transition: all .6s ease-in-out;
+  -moz-transition: all .6s ease-in-out;
+  -ms-transition: all .6s ease-in-out;
+  -o-transition: all .6s ease-in-out;
+  transition: all .6s ease-in-out;
+}
+.img_transition:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.public-box-item-img image{
+  width: 180px;
+  height: 280px;
+}
+
+.ant-card-actions{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #fafafa;
+  border-top: 1px solid #e8e8e8;
+  zoom: 1;
+}
+.ant-card-actions .li{
+  float: left;
+  width: 50%;
+  margin: 12px 0;
+  color: rgba(0,0,0,.45);
+  text-align: center;
+  box-sizing: border-box;
+}
+.ant-card-actions .li:not(:last-child){
+  border-right: 1px solid #e8e8e8;
+}
+.ant-card-actions .li .span{
+  position: relative;
+  display: inline-block;
+  min-width: 32px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #2d8cf0;
+  background: transparent;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  transition: color .2s ease;
+}
+
+.qrcode{
+  width: 250px;
+  margin: 10px auto;
+}
+.qrcode image{
+  width: 250px;
+  height: 250px;
+}
+.sort-table .sort-btn:hover,
+.sort-table .sort-name:hover {
+  color: #3164ff;
+}
+.selected-item {
+  color: #3164ff !important;
+}

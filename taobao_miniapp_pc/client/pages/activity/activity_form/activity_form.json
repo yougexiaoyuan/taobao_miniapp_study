@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "base": "../components/act_base/act_base",
+    "rule": "../components/act_rule/act_rule",
+    "follow_rule": "../components/act_follow_rule/act_follow_rule",
+    "award": "../components/act_award/act_award",
+    "diy": "../components/diy/diy",
+    "spread": "../components/spread/spread",
+    "header": "../components/header/header"
+  }
+}

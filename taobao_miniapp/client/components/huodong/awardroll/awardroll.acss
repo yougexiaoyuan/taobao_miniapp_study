@@ -1,0 +1,28 @@
+@keyframes kf-marque-animation {
+    0% {
+    transform: translateX(200px);
+    -webkit-transform: translateX(200px);
+  }
+
+  100% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
+}
+.marquee {
+    border: none;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+    position: relative;
+}
+
+.marquee .content {
+    display: inline-block;
+    position: relative;
+    padding-right: 0px;
+    animation: kf-marque-animation .3s linear infinite;
+    white-space: nowrap;
+}

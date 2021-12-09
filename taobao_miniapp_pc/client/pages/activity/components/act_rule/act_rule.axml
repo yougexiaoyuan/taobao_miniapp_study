@@ -1,0 +1,155 @@
+<view class="mt20">
+  <view class="com-wrap" style="padding:10px 0 10px 0;">
+    <view class="ivu-row-flex mt10">
+      <view class="ivu-col-span-7 text-center font-style">每人最大抽奖次数
+        <select class="ml10" onChange="onActivityChange" data-name="max_join_times" value="{{activity.max_join_times}}" defaultValue="0">
+          <option value="0">无限制</option>
+          <option a:for="{{dataSelectNumbers}}" a:for-index="idx" a:for-item="item">
+            {{item}}
+          </option>
+        </select>
+      </view>
+      <view class="ivu-col-span-7 text-center font-style">每人最大中奖次数
+        <select class="ml10" onChange="onActivityChange" data-name="max_lucky_times" value="{{activity.max_lucky_times}}" 
+          defaultValue="0">
+          <option value="0">无限制</option>
+          <option a:for="{{dataSelectNumbers}}" a:for-index="idx" a:for-item="item">
+            {{item}}
+          </option>
+        </select>
+      </view>
+      <view class="ivu-col-span-7 text-center font-style">每人每天最大抽奖次数
+        <select class="ml10" onChange="onActivityChange" data-name="per_day_times" value="{{activity.per_day_times}}" defaultValue="0">
+          <option value="0">无限制</option>
+          <option a:for="{{dataSelectNumbers}}" a:for-index="idx" a:for-item="item">
+            {{item}}
+          </option>
+        </select>
+      </view>
+    </view>
+    
+  </view>
+  <view style="height:10px;background:#eee;">
+    
+  </view>
+  <view class="mt10" style="display:flex;justify-content:space-between;">
+    <view class="ivu-col-span-10" style="">
+      <view class="ivu-card">
+        <view class="ivu-card-head">
+          <view class="font-size-16">规则选择区</view>
+        </view>
+        <view class="ivu-card-extra">
+          <view class="font-red font-pointer font-size12" onTap="onOpenDetailRule">详细规则说明</view>
+        </view>
+        <view class="ivu-card-body">
+          <view class="ivu-row">
+            <view class="ivu-col-span-cus" style="overflow-y: auto; padding-left: 4px; padding-right: 4px;padding-bottom:20px;">
+              <view class="ivu-card ivu-card-bordered ivu-card-dis-hover" style="height:400px;">
+                <view class="ivu-card-body">
+                  <view data-value="{{index}}" a:for="{{ruleList}}" a:for-index="index" a:for-item="item" class="rule_select {{version_limit.indexOf(index)>-1?'readonly':''}} {{selectedRuleIndex==index?'selected_rule':''}}" 
+                    onTap="onSwitchRules">
+                    {{item}}
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="ivu-col-span-15" style="overflow-y: auto; padding-left: 4px; padding-right: 4px;">
+              <view class="ivu-card ivu-card-bordered ivu-card-dis-hover">
+                <view style="padding:16px 0 0 10px;">
+                  <form size="large" style="width: 60%" labelCol="{{labelCol}}" wrapperCol="{{wrapperCol}}">
+                    <form-item a:if="{{ruleShow.join_times}}" label="可抽奖" required>
+                      <input onChange="onChange" data-name="join_times" value="{{formValidate.rule_extend.join_times}}" addonTextAfter="次" />
+                    </form-item>     
+                    <form-item label="规则排序">
+                      <radio-group size="small" shape="button" value="{{formValidate.rule_sort}}" onChange="onChange" data-name="rule_sort">
+                        <radio value="1">1</radio>
+                        <radio value="2">2</radio>
+                        <radio value="3">3</radio>
+                        <radio value="4">4</radio>
+                        <radio value="5">5</radio>
+                        <radio value="6">6</radio>
+                      </radio-group>
+                      <tooltip style="width: 300">                        
+                        <icon class="" slot="trigger" type="help" style="color: #3597f2;" size="small" />
+                        <view>
+                          1.同一个序号下即是混合规则，即必须满足所有的规则，抽奖次数叠加。
+                          2.一个活动最多支持2个混合规则。
+                          3.一个混合规则支持6个规则。
+                        </view>
+                      </tooltip>
+                    </form-item>
+                    <form-item label=" ">
+                      <button type="primary" onTap="handleAdd">添加</button>
+                    </form-item>
+                  </form>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>  
+    </view>
+    <view class="ivu-col-span-14" style="padding-left: 16px;">
+      <view class="ivu-card">
+        <view class="ivu-card-head">
+          <view class="font-size-16">最终选择的规则</view>
+        </view>
+        <view class="ivu-card-body">
+          <view a:for="{{[1,2,3,4,5,6]}}" a:for-item="item" class="mt10 ivu-card ivu-card-bordered ivu-card-dis-hover custome-border">
+            <view class="ivu-card-body">
+              <view class="ivu-row-flex">
+                <view class="ivu-col ivu-col-span-1 rule-number">{{item}}</view>
+                <view class="ivu-col ivu-col-span-22">
+                  <view a:for="{{ruleSeletedList}}" a:for-index="index" a:for-item="rule">
+                    <view a:if="{{0==rule.rule_type}}">
+                      <view a:if="{{item==rule.rule_sort}}">
+                        <view a:for="{{rule.rule_extend}}" a:for-index="sub_index" a:for-item="rule_extend" a:key="sub_index" 
+                          style="display: inline-block;margin:10px;position:relative;" class="acea-row">
+                          <view style="border: 1px solid rgb(238, 238, 238); padding: 8px 15px; float: left;">
+                            {{rule_extend.rule_name}}
+                            <view class="iai-add-image__delete" style="right:{{rule.rule_extend.length>1 &&  (rule.rule_extend.length-1) != sub_index?'93px' :'-8px'}}" 
+                              data-rule_id="{{rule.id}}" data-rule_type="{{rule.rule_type}}" data-sub_index="{{sub_index}}" 
+                              onTap="handleDel">
+                              <icon type="delete-filling" />
+                            </view>
+                            <text class="text" onTap="handelSetExtend" data-rule_extend="{{rule_extend}}" data-id="{{rule.id}}" 
+                              data-rule_type="{{rule.rule_type}}" data-sub_index="{{sub_index}}" a:if="{{rule_extend.rule_type == 201 ||rule_extend.rule_type == 204}}">配置</text>
+                            <text class="text" onTap="handelSetExtend" data-rule_extend="{{rule_extend}}" data-id="{{rule.id}}" 
+                              data-rule_type="{{rule.rule_type}}" data-sub_index="{{sub_index}}" a:elif="{{rule_extend.value}}">配置</text>
+                          </view>
+                          <view a:if="{{sub_index < (rule.rule_extend.length-1)}}" style="margin-left:20px;float:right;color:red;font-weight:600">并且必须满足</view>
+                        </view>
+                      </view>
+                    </view>
+                    <view a:elif="{{item==rule.rule_sort}}" style="border:1px solid #eee;padding: 8px 15px;display: inline-block;margin:10px;position:relative;" 
+                      class="acea-row">
+                      <!-- {{ filterRuleExtend(rule_extend) }} -->
+                      {{rule.rule_name}}
+                      <view class="iai-add-image__delete" data-rule_id="{{rule.id}}" data-rule_type="{{rule.rule_type}}" 
+                        data-sub_index="-1" onTap="handleDel">
+                        <icon type="delete-filling" />
+                      </view>
+                      <text class="text" onTap="handelSetExtend" data-rule_extend="{{rule.rule_extend}}" data-id="{{rule.id}}" 
+                        data-rule_type="{{rule.rule_type}}" data-sub_index="-1" a:if="{{rule.rule_type == 201 || rule.rule_type == 204}}">
+                        配置
+                      </text>
+                      <text class="text" onTap="handelSetExtend" data-rule_extend="{{rule.rule_extend}}" data-id="{{rule.id}}" 
+                        data-rule_type="{{rule.rule_type}}" data-sub_index="-1" a:elif="{{rule.rule_extend.value}}">
+                        配置
+                      </text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="btn-bottom">
+  <button type="primary" style="width:100px;height:38px" onTap="handleBackActivityList">返回列表</button>
+  <button type="primary" style="width:100px;height:38px" class="ml20" onTap="onUpdateThrees">保存</button>
+  <button type="primary" style="width:100px;height:38px" class="ml20" onTap="onBaseNext">下一步</button>
+</view>

@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "defaultTitle": "Swiper",
+  "pullRefresh": false,
+  "allowsBounceVertical": false
+}

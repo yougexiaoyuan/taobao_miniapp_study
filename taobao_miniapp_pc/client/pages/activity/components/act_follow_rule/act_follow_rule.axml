@@ -1,0 +1,20 @@
+<view class="mt20">
+  <view class="com-wrap padding20" >
+  <form size="large" style="width: 60%" labelCol="{{labelCol}}" wrapperCol="{{wrapperCol}}">
+    <form-item label=" ">
+      <checkbox checked="true" disabled="true"> 
+        关注店铺
+      </checkbox>
+    </form-item>
+    <form-item label=" ">
+      <text class="font-color font-size12">注意：只有在活动期间内，新关注的用户才可以参与领取奖品</text>
+    </form-item>
+  </form>
+    <view style="height:20px;">
+
+    </view>
+</view>
+</view>
+<view class="btn-bottom">
+  <button type="primary" style="width:100px;height:38px" class="ml20" onTap="onBaseNext">下一步</button>
+</view>

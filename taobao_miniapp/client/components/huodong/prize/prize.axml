@@ -1,0 +1,9 @@
+<view style="position:absolute;width:{{width}}rpx;height:{{height}}rpx;top:{{top}}rpx;left:{{left}}rpx;z-index:{{z_index}}rpx;overflow: hidden;">
+  <view class="swipers hot_banner" a:if="{{imgUrls.length}}" >
+      <block a:for="{{imgUrls}}" a:for-index="idx" a:for-item="item">
+      <view style="padding:0 {{lrConfig}}rpx">
+        <image src="{{item}}" style="height:{{height}}rpx;width:{{height}}rpx;"></image>
+      </view>
+      </block>
+  </view>
+</view>

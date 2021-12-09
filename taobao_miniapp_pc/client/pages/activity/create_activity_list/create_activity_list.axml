@@ -1,0 +1,72 @@
+<header></header>
+<view class="padding10">
+  <view class="sort-table">
+    <!-- <view class="sort-item-wrap">
+      <view class="sort-item-title">节日热点</view>
+      <view class="sort-item-list">
+        <view class="sort-name {{searchForm.festival == '' ? 'selected-item' : ''}}" onTap='handleFestivalFilter' data-id=''>全部</view>
+        <view a:for="{{festival}}" a:key="*this" class="sort-name {{searchForm.festival == item.type ? 'selected-item' : ''}}" onTap='handleFestivalFilter' data-id='{{item.type}}'>{{item.name}}</view>
+      </view>
+    </view> -->
+    <view class="sort-item-wrap">
+      <view class="sort-item-title">抽奖游戏</view>
+      <view class="sort-item-list">
+        <view class="sort-name {{searchForm.game == '' ? 'selected-item' : ''}}" onTap='handleGameTypeFilter' data-id=''>全部</view>
+        <view a:for="{{game}}" a:key="*this" class="sort-name {{searchForm.game == item.type ? 'selected-item' : ''}}" onTap='handleGameTypeFilter' data-id='{{item.type}}'>{{item.name}}</view>
+      </view>
+    </view>
+        <view class="sort-item-wrap">
+      <view class="sort-item-title">其他互动</view>
+      <view class="sort-item-list">
+        <view class="sort-name {{searchForm.game == '' ? 'selected-item' : ''}}" onTap='handleGameTypeFilter' data-id=''>全部</view>
+        <view a:for="{{gameOther}}" a:key="*this" class="sort-name {{searchForm.game == item.type ? 'selected-item' : ''}}" onTap='handleGameTypeFilter' data-id='{{item.type}}'>{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="public-box">
+    <view class="public-item img_transition" a:for="{{listData}}" a:key="*this">
+      <view class="ivu-card ivu-card-bordered">
+        <view class="ivu-card-body">
+          <view class="public-box-item-img card-cover">
+            <image lazy-load="true" src="{{item.banner}}" />
+          </view>
+          <view class="ant-card-actions">
+            <view class="li">
+              <view class="span" onTap="onView" data-id="{{item.id}}">预览</view>
+            </view>
+            <view class="li">
+              <view class="span" onTap="onUsed" data-id="{{item.id}}" data-game_type="{{item.game_type}}">使用</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view a:if="{{modalMa}}">
+  <view class="ivu-modal-mask" style="z-index: 1067;">
+  </view>
+  <view class="ivu-modal-wrap" style="z-index: 1067;">
+    <view class="ivu-modal" style="width: 400px;">
+      <view class="ivu-modal-content">
+        <view class="ivu-modal-header">
+          <view class="ivu-modal-header-inner">预览二维码</view>
+        </view>
+        <view class="ivu-modal-body">
+          <view class="mt10 qrcode">
+            <image a:if="{{qrCodeImage != ''}}" src="data:image/png;base64,{{qrCodeImage}}" />
+          </view>
+        </view>
+        <view class="ivu-modal-footer">
+          <view>
+            <button class="custom-button-1 mr20" onTap="modalOnCancel" type="normal">取消</button>
+            <button class="custom-button-1" onTap="modalOnCancel" type="primary">确定</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+  

@@ -1,0 +1,86 @@
+.container{background:white;min-height:1200rpx}
+.buttons{margin:50rpx 100rpx;display:flex;justify-content:space-around}
+.buttons button{width:200rpx;color:white;border-radius: 20rpx;font-size:38rpx}
+
+/* .goods{margin-top:30rpx}
+.goods .one{width:335rpx;display:inline-block;margin:20rpx;text-align:center}
+.goods .one image{width:335rpx; height:335rpx; border-radius: 30rpx}
+.goods .one view{font-size:25rpx;height:55rpx;overflow:hidden}
+.goods .one button{margin-top:20rpx;color:#b32e2b;border-color:#b32e2b;border-radius: 10rpx} */
+
+
+.goodsTips{
+    color:#aaa;
+    text-align:center;
+    padding:20rpx;
+}
+.goods {
+    margin-top: 30rpx;
+    background-color: #F3F3F3;
+}
+
+.goods .one {
+    width: 335rpx;
+    display: inline-block;
+    margin: 20rpx;
+    text-align: center;
+    /* float:left; */
+    
+}
+
+.goods .one image {
+    width: 335rpx;
+    height: 335rpx;
+    /* border-radius: 30rpx; */
+    border-top-left-radius: 30rpx;
+    border-top-right-radius: 30rpx;
+    margin:0 ;
+    background-color:white;
+    
+}
+.goods .one .titleandbutton{
+    background:white;
+    margin-top:-3px;
+    border-bottom-left-radius: 30rpx;
+    border-bottom-right-radius: 30rpx;
+}
+.goods .one .titlek{
+    padding:30rpx;
+}
+.goods .one .title {
+    font-size: 25rpx;
+    /* margin-top:20rpx; */
+    overflow: hidden;
+    height:30px;
+    line-height:15px;
+    text-align:left;
+}
+
+.goods .one button {
+    margin-bottom: 20rpx;
+    /* color: #b32e2b;
+    border-color: #b32e2b; */
+    border-radius: 10px;
+    border:none;
+    background:#ff3333;
+    color:white;
+    height:20px;
+    line-height:20px;
+    width:150rpx;
+}
+
+.gotoshop {
+    min-height: 100vh;
+    margin: 0px auto;
+    text-align:center;
+}
+
+.gotoshop button {
+    font-size:14px;
+    border-radius: 100rpx;
+    color: #ff8033;
+    background: white;
+    border-color: #ff8033;
+    width:300rpx;
+    
+}

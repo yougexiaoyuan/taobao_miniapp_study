@@ -1,0 +1,49 @@
+<view class="padding20">
+  <view class="sort-table">
+    <view class="sort-item-wrap">
+      <view class="ivu-row-flex ivu-row-flex-end">
+        <view class="ivu-text-left ivu-col ivu-col-span-24" style="padding-top: 20px;">
+          <view class="padding6 ivu-col ivu-col-span-xs-24">
+            <view class="ivu-form-item">
+              <text class="ivu-form-item-label" style="width:100px">用户昵称：</text>
+              <view class="ivu-form-item-content" style="margin-left:100px">
+                <input onChange="onChange" data-name="buyer_pin" value="{{formSearch.buyer_pin}}" maxLength="15" hasLimitHint="true" placeholder="请输入用户昵称" />
+              </view>
+            </view>
+          </view>
+          <view class="padding6 ivu-col ivu-col-span-xs-24 ml20">
+            <view class="ivu-form-item">
+              <text class="ivu-form-item-label" style="width:100px">统计日期：</text>
+              <view class="ivu-form-item-content" style="margin-left:100px">
+                <range-picker onChange="onDateChange" format="YYYY/MM/DD" class="block" />
+              </view>
+            </view>
+          </view>
+          <view class="padding6 ivu-col ivu-col-span-xs-24 ml20">
+            <view class="ivu-form-item">
+              <view class="ivu-form-item-content">
+                <button onTap="handleFilter" class="custom-button-1" type="primary">搜索</button>
+                <button onTap="onExports" class="custom-button-1 ml20" type="primary">导出</button>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+    <table class="mt10" dataSource="{{list}}" loading="{{loading}}">
+    <table-column title="编号" dataIndex="index">
+      <text slot-scope="row">{{row.index+1}}</text>
+    </table-column>
+    <table-column title="中奖客户" dataIndex="buyer_pin" />
+      <table-column title="发奖状态" dataIndex="send_state">
+      <text slot-scope="row">{{row.record.send_state?'正常发放':'未发放'}}</text>
+    </table-column>
+    <table-column title="奖品名称" dataIndex="award_title" />
+    <table-column title="中奖时间" dataIndex="create_time" />
+  </table>
+
+  <view class="right mt10">
+    <pagination defaultCurrent="{{1}}" total="{{total}}" onChange="onPageSizeChange" size="medium" />
+  </view>
+</view>

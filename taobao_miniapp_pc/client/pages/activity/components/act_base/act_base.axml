@@ -1,0 +1,33 @@
+<view class="mt20">
+  <view class="com-wrap padding20">
+    <form size="large" style="width: 60%;" labelCol="{{labelCol}}" wrapperCol="{{wrapperCol}}">
+      <form-item label="活动标题" required>
+        <input onChange="onChange" data-name="lucky_title" value="{{lucky_title}}" maxLength="15" hasLimitHint="true" name="活动标题" placeholder="请输入活动标题" />
+      </form-item>
+      <form-item label="活动时间" required>
+        <range-picker onChange="onDateChange" value="{{dateRangeData}}" format="YYYY-MM-DD" class="block" show-time="{{ format: 'HH:mm:ss' }}" />
+      </form-item>
+      <form-item label="用户授权">
+        <checkbox onChange="onChange" data-name="is_need_userauth" name="is_need_userauth" checked="{{is_need_userauth}}">
+               用户授权
+        </checkbox>
+      </form-item>
+      <form-item label="活动详情">
+        <checkbox onChange="onChange" data-name="is_auto_memo" name="is_auto_memo" checked="{{is_auto_memo}}">
+               自动生成
+        </checkbox>
+      </form-item>
+      <form-item a:if="{{is_auto_memo==false}}" label=" ">
+        <textarea onChange="onChange" data-name="memo" value="{{memo}}" name="memo" />
+      </form-item>
+    </form>
+    <view style="height:20px;">
+
+    </view>
+  </view>
+</view>
+<view class="btn-bottom">
+  <button type="primary" style="width:100px;height:38px" onTap="handleBackActivityList">返回列表</button>
+  <button type="primary" style="width:100px;height:38px" class="ml20" onTap="handleSubmit">保存</button>
+  <button type="primary" style="width:100px;height:38px" class="ml20" onTap="onBaseNext">下一步</button>
+</view>

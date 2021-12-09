@@ -1,0 +1,41 @@
+<view a:if="{{show}}">
+  <header ></header>
+  
+    <view class="ivu-row" style='margin:15px auto'>
+      <view class="ivu-card ivu-card-dis-hover">
+        <view class="ivu-card-head">
+          <view style="font-size:16px; display:inline-block">热门模板</view>
+        </view>
+        <view class="ivu-card-body">
+          <view class="m20">
+            <view class="ivu-row-flex ivu-row-flex-center">
+              <view a:for="{{hotTemplate}}" class="ivu-col ivu-col-span-md-4">
+                <image class="img_transition" src="{{item}}" style="width:187.5px;height:293px;box-shadow:darkgrey 1px 1px 10px 2px;" />
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="ivu-row" style='margin:15px auto'>
+      <view class="ivu-card ivu-card-dis-hover">
+        <view class="ivu-card-head">
+          <view style="font-size:16px; display:inline-block">小程序定制</view>
+        </view>
+        <view class="ivu-card-body">
+          <view class="m20">
+            <view class="ivu-row-flex ivu-row-flex-center">
+              <view a:for="{{setMiniapp}}" class="ivu-col ivu-col-span-md-4">
+                <image class="img_transition" src="{{item}}" style="width:187.5px;height:293px;box-shadow:darkgrey 1px 1px 10px 2px;" />
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view style="height:20px;">
+    
+  </view>

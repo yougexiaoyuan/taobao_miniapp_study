@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "data_detail": "../components/com_data_analyse/lucky_data_detail/lucky_data_detail",
+    "follow_data_detail": "../components/com_data_analyse/follow_data_detail/follow_data_detail",
+    "data_other": "../components/com_data_analyse/other_data/other_data",
+     "header": "../components/header/header"
+  }
+}

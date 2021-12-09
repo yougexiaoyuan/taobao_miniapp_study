@@ -1,0 +1,15 @@
+<header></header>
+<view style="padding:10px;">
+  
+
+<view style="background-color:#fff;" class="padding20">
+  <tab defaultActiveKey="dataDetail" triggerType="click" onChange="tabOnChange">
+    <tab-item title="数据详情" itemKey="dataDetail">
+      <data_detail actId="{{ acid }}"></data_detail>
+    </tab-item>
+  </tab>
+  <view style="height:20px;">
+    
+  </view>
+</view>
+</view>

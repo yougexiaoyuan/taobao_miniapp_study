@@ -1,0 +1,44 @@
+/* 大富翁 */
+
+.marquee_wp {
+    /* margin: 0 20rpx; */
+    display: flex;
+    flex-wrap: wrap;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.marquee_wp .marquee_item {
+    width: 160rpx;
+    height: 160rpx;
+    /* margin: 0 11rpx 12rpx 0; */
+    opacity: 0;
+    background: #ccc;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.marquee_wp .marquee_item.on {
+    opacity: 0.8;
+}
+
+.marquee_wp .marquee_item image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.marquee_wp .marquee_item:nth-child(3n) {
+    margin-right: 0;
+}
+
+.marquee_wp .marquee_item_btn {
+    background: transparent;
+}
+
+.marquee_wp .marquee_item_btn text {
+    display: block;
+    text-align: center;
+    color: #fff;
+}

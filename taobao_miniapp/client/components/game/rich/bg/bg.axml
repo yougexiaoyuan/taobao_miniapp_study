@@ -1,0 +1,24 @@
+<view class="marquee_wp"  style="position:absolute;width:{{width}}rpx;height:{{height}}rpx;top:{{top}}rpx;left:{{left}}rpx;z-index:{{zindex}};background-image:url({{logoConfig}});background-size:100% 100%;background-repeat:no-repeat;">
+    <view a:if="{{!logoConfig}}" style="width:100%;height:100%;">
+      <image mode="aspectFit" src="{{richPicUrl[0]}}" style="float:left;width:{{width/3-50}}rpx;height:{{(height/3-50).toFixed(2)}}rpx;margin:25rpx;border-radius:10rpx;"></image>
+      <image mode="aspectFit" src="{{richPicUrl[1]}}" style="float:left;width:{{width/3-50}}rpx;height:{{(height/3-50).toFixed(2)}}rpx;margin:25rpx;border-radius:10rpx;"></image>
+      <image mode="aspectFit" src="{{richPicUrl[2]}}" style="float:left;width:{{width/3-50}}rpx;height:{{(height/3-50).toFixed(2)}}rpx;margin:25rpx;border-radius:10rpx;"></image>
+      <image mode="aspectFit" src="{{richPicUrl[7]}}" style="float:left;width:{{width/3-50}}rpx;height:{{(height/3-50).toFixed(2)}}rpx;margin:25rpx;border-radius:10rpx;"></image>
+      <image mode="aspectFit" src="{{richStartGameUrl}}" style="float:left;width:{{width/3-50}}rpx;height:{{(height/3-50).toFixed(2)}}rpx;margin:25rpx;border-radius:10rpx;"></image>
+      <image mode="aspectFit" src="{{richPicUrl[3]}}" style="float:left;width:{{width/3-50}}rpx;height:{{(height/3-50).toFixed(2)}}rpx;margin:25rpx;border-radius:10rpx;"></image>
+      <image mode="aspectFit" src="{{richPicUrl[6]}}" style="float:left;width:{{width/3-50}}rpx;height:{{(height/3-50).toFixed(2)}}rpx;margin:25rpx;border-radius:10rpx;"></image>
+      <image mode="aspectFit" src="{{richPicUrl[5]}}" style="float:left;width:{{width/3-50}}rpx;height:{{(height/3-50).toFixed(2)}}rpx;margin:25rpx;border-radius:10rpx;"></image>
+      <image mode="aspectFit" src="{{richPicUrl[4]}}" style="float:left;width:{{width/3-50}}rpx;height:{{(height/3-50).toFixed(2)}}rpx;margin:25rpx;border-radius:10rpx;"></image>
+    </view>
+ <view style="position:absolute;width:100%;height:100%;top:0;left:0;">
+      <view class="marquee_item {{idx == 1 ? 'on' : ''}}" style="float:left;width:{{width/3}}rpx;height:{{(height/3).toFixed(2)}}rpx;"></view>
+      <view class="marquee_item {{idx == 2 ? 'on' : ''}}" style="float:left;width:{{width/3}}rpx;height:{{(height/3).toFixed(2)}}rpx;"></view>
+      <view class="marquee_item {{idx == 3 ? 'on' : ''}}" style="float:left;width:{{width/3}}rpx;height:{{(height/3).toFixed(2)}}rpx;"></view>
+      <view class="marquee_item {{idx == 8 ? 'on' : ''}}" style="float:left;width:{{width/3}}rpx;height:{{(height/3).toFixed(2)}}rpx;"></view>
+      <view class="marquee_item marquee_item_btn" onTap="startGame" style="float:left;width:{{width/3}}rpx;height:{{(height/3).toFixed(2)}}rpx;"></view>
+      <view class="marquee_item {{idx == 4 ? 'on' : ''}}" style="float:left;width:{{width/3}}rpx;height:{{(height/3).toFixed(2)}}rpx;"></view>
+      <view class="marquee_item {{idx == 7 ? 'on' : ''}}" style="float:left;width:{{width/3}}rpx;height:{{(height/3).toFixed(2)}}rpx;"></view>
+      <view class="marquee_item {{idx == 6 ? 'on' : ''}}" style="float:left;width:{{width/3}}rpx;height:{{(height/3).toFixed(2)}}rpx;"></view>
+      <view class="marquee_item {{idx == 5 ? 'on' : ''}}" style="float:left;width:{{width/3}}rpx;height:{{(height/3).toFixed(2)}}rpx;"></view>
+</view>
+</view>

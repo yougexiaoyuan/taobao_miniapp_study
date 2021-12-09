@@ -1,0 +1,24 @@
+page {
+  background: #f7f7f7;
+}
+
+.container{background: white}
+.head{height:100rpx;line-height:100rpx;text-align:center;background:#CCC;font-size:38rpx}
+.head .close {float:right;padding-right:30rpx;font-size:28rpx}
+/* .title{margin:30rpx; font-size:38rpx} */
+
+.blod {
+  font-weight: bold;
+}
+
+.italics {
+  font-style: italic;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}

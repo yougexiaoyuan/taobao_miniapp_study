@@ -1,0 +1,9 @@
+<view class="header" style="display:flex;justify-content:flex-end;font-size:12px;">
+  欢迎，
+  <view style="line-height:76px;">
+    <image style="width:30px;height:30px;border-radius:50%;" mode="scaleToFill" src="{{user_info.pic_path}}"/>
+  </view>
+  <view>{{user_info.title}}</view>
+  <view onTap="onHelp" class="ml20" style="color:blue;cursor:pointer;">帮助</view>
+  <view onTap="onExit" class="ml15 mr20" style="color:blue;cursor:pointer;">注销</view>
+</view>

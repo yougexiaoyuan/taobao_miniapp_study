@@ -1,0 +1,22 @@
+<view>
+  <tabs tabs="{{tabs}}" onTabClick="handleTabClick" onChange="handleTabChange" activeTab="{{activeTab}}">
+    <tab-content key="0">
+      <view class="tab-content" style="background:#DDD;margin-top:30rpx">
+        <view a:if="{{lucky.length>0}}">
+          <view class="award-one" a:for="{{lucky}}" a:for-item="item" key="idx">
+            <image src="{{item.award_pic_url}}"></image>
+            <view class="view1" style="font-size:16px;overflow:hidden;">{{item.award_title}}</view>
+            <view class="view1" style="font-size:12px;color:#555">
+              <view class="date">{{item.create_time}}</view>
+              <view style="display: flex;align-items:center;height:100%;">
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="award-one" style="text-align:center" a:else>
+        您还未中奖
+        </view>
+      </view>
+    </tab-content>
+  </tabs>
+</view>

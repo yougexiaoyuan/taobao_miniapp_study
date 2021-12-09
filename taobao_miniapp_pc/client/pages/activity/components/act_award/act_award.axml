@@ -1,0 +1,81 @@
+<view class="mt20">
+  <view style="padding-bottom:20px;" class="padding20">
+    <view a:if="{{listShow}}">
+      <button class="custom-button-1" onTap="handleAdd" type="primary">添加奖品</button>
+      <table class="mt10" dataSource="{{dataAward}}">
+        <table-column title="序号" dataIndex="award_sort" />
+        <table-column title="奖品名称" dataIndex="award_title" />
+        <table-column title="奖品类型" dataIndex="awardTypeName" />
+        <table-column title="奖品数量" dataIndex="award_num" />
+        <table-column title="奖品剩余" dataIndex="award_remain_num" />
+        <table-column title="奖品概率" dataIndex="award_chance" />
+        <table-column title="每人限制" dataIndex="award_per_limit">
+          <view slot-scope="row">
+            {{row.record.award_per_limit==0?'无限制':row.record.award_per_limit}}
+          </view>
+        </table-column>
+        <table-column title="操作" dataIndex="action">
+          <button data-id="{{row.record.id}}" slot-scope="row" onTap="onEdit" class="custom-button-1" type="primary" text>编辑</button>
+          <button data-row="{{row.record}}" slot-scope="row" onTap="onDel" class="custom-button-1 ml10" type="primary" text>删除</button>
+        </table-column>
+      </table>
+    </view>
+    <view a:if="{{formShow}}">
+      <button class="custom-button-1" onTap="onToAwardList" type="primary">返回</button>
+      <view class="goodsTitle acea-row mt20">
+        <view class="title">
+          基本规则(必填)
+        </view>
+      </view>
+      <form style="width: 80%" labelCol="{{labelCol}}" wrapperCol="{{wrapperCol}}">
+        <form-item label="奖品类型" required>
+          <radio-group shape="button" data-name="award_type" value="{{formValidate.award_type}}" onChange="onAwardChange">
+            <radio a:for="{{fromList.typeList}}" a:for-item="item" value="{{item.val}}">{{item.text}}</radio>
+          </radio-group>
+        </form-item>
+        <form-item label="奖品名称" required>
+          <input class="w300" onChange="onAwardChange" data-name="award_title" value="{{formValidate.award_title}}" maxLength="25" 
+            hasLimitHint="true" placeholder="请输入" />
+        </form-item>
+        <form-item label="奖品概率" required>
+          <input disabled="{{formValidate.award_rule_flag}}" onChange="onAwardChange" class="w100" data-name="award_chance" 
+            value="{{formValidate.award_chance}}" placeholder="请输入" addonTextAfter="%" />
+        </form-item>
+        <form-item label="奖品数量" required>
+          <input onChange="onAwardChange" class="w80" data-name="award_num" value="{{formValidate.award_num}}" placeholder="请输入" />
+          <text class="font-color ml20 font-size12">修改奖品数量时，只能增加不能减少，请谨慎设置</text>
+        </form-item>
+        <form-item label="奖品图片" required>
+          <input onChange="onAwardChange" class="w80" data-name="award_pic_url" value="{{formValidate.award_pic_url}}" placeholder="请输入" />
+          <image mode="widthFix" class="w80 ml20" src="{{formValidate.award_pic_url}}" style="vertical-align:middle;" />
+          <button type="primary" class="ml20" onTap="onImages">图片空间</button>
+        </form-item>
+      </form>
+      <view class="goodsTitle acea-row mt20">
+        <view class="title">
+          高级设置（选填）
+        </view>
+      </view>
+      <form style="width: 60%" labelCol="{{labelCol}}" wrapperCol="{{wrapperCol}}">
+        <form-item label="每人最多中奖">
+          <select onChange="onAwardChange" data-name="award_per_limit" value="{{formValidate.award_per_limit}}" defaultValue="0">
+            <option value="0">无限制</option>
+            <option a:for="{{dataSelectNumbers}}" a:for-index="idx" a:for-item="item">
+              {{item}}
+            </option>
+          </select>
+        </form-item>
+      </form>
+    </view>
+  </view>
+</view>
+
+<view a:if="{{listShow}}" class="btn-bottom">
+  <button type="primary" style="width:100px;height:38px" onTap="handleBackActivityList">返回列表</button>
+  <button type="primary" style="width:100px;height:38px" class="ml20" onTap="onBaseNext">下一步</button>
+</view>
+<view a:if="{{formShow}}" class="btn-bottom">
+  <button class="mr20" style="width:100px;height:38px" onTap="onToAwardList">取消</button>
+  <button style="width:100px;height:38px" a:if="{{dialogStatus=='created'}}" type="primary" onTap="handleSubmit">保存</button>
+  <button style="width:100px;height:38px" a:else type="primary" onTap="handleUpdate">保存</button>
+</view>

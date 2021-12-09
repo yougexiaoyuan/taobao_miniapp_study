@@ -1,0 +1,33 @@
+{
+  "usingComponents": {
+    "am-icon": "mini-antui/es/am-icon/index",
+    "modal": "mini-antui/es/modal/index",
+    "list": "mini-antui/es/list/index",
+    "list-item": "mini-antui/es/list/list-item/index",
+    "input-item": "mini-antui/es/input-item/index",
+    "picker-item": "mini-antui/es/picker-item/index",
+    "base-title": "/components/base/title/title",
+    "base-img": "/components/base/image/image",
+    "rich-btn": "/components/game/rich/btn/btn",
+    "rich-bg": "/components/game/rich/bg/bg",
+    "huodong-fav": "/components/huodong/fav/fav",
+    "huodong-sign": "/components/huodong/sign/sign",
+    "huodong-share": "/components/huodong/share/share",
+    "huodong-prize": "/components/huodong/prize/prize",
+    "huodong-detail": "/components/huodong/detail/detail",
+    "huodong-vote": "/components/huodong/vote/vote",
+    "huodong-input": "/components/huodong/input/input",
+    "huodong-myaward": "/components/huodong/myaward/myaward",
+    "huodong-fixedbtn": "/components/huodong/fixedbtn/fixedbtn",
+    "huodong-showgoods": "/components/huodong/showgoods/showgoods",
+    "huodong-inputmsg": "/components/huodong/inputmsg/inputmsg",
+    "huodong-rule": "/components/huodong/rule/rule",
+    "huodong-awardroll": "/components/huodong/awardroll/awardroll",
+    "huodong-goodslist": "/components/huodong/goodslist/goodslist",
+    "huodong-joinmember": "/components/huodong/joinmember/joinmember",
+    "huodong-wangwang": "/components/huodong/wangwang/wangwang",
+    "huodong-pagebtn": "/components/huodong/pagebtn/pagebtn",
+    "huodong-common": "/components/huodong/common/common"
+  },
+  "navigationBarForceEnable": true
+}

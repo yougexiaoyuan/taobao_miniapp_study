@@ -1,0 +1,4 @@
+<view a:if="{{is_public==2}}">
+  <view  onTap="handleGotoFlowShare" style="position:fixed;width:{{width}};height:{{height}}rpx;bottom:0;z-index:100000;background-image:url({{logoConfig}});background-size:100% 100%;background-repeat:no-repeat;">
+  </view>
+</view>

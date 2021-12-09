@@ -1,0 +1,5 @@
+<view>
+  <view class="title" onTap="handleShare" style="overflow: scroll;position:absolute;width:{{width}}rpx;height:{{height}}rpx;top:{{top}}rpx;left:{{left}}rpx;z-index:{{zindex}};background-image:url({{logoConfig}});background-size:100% 100%;background-repeat:no-repeat;">
+    <view class="{{textStyle==1?'italics':textStyle==2?'blod':''}} {{textPosition==0?'left':textPosition==2?'right':''}}" style="font-size:{{fontSize}}rpx;background-color:{{bgColor}};color:#fff;margin-top:{{mbConfig}}rpx;"><rich-text nodes="{{memo_nodes}}"></rich-text></view>
+  </view>
+</view>

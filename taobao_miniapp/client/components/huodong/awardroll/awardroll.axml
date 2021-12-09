@@ -1,0 +1,5 @@
+<view>
+  <view class="marquee" style="overflow: scroll;position:absolute;width:{{width}}rpx;height:{{height}}rpx;top:{{top}}rpx;left:{{left}}rpx;z-index:{{zindex}};background-image:url({{logoConfig}});background-size:100% 100%;background-repeat:no-repeat;font-size:{{fontSize}}rpx;background-color:{{bgColor}};color:{{titleColor}};">
+     <text class="content">{{awardRollInfo}}</text>
+  </view>
+</view>

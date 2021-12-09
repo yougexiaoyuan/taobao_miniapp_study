@@ -1,0 +1,143 @@
+<view style="height:{{layoutHeight}}rpx;background-image:url({{bgImage}});background-size:100%;background-repeat:no-repeat;background-color:{{bgColor}}">
+  <!-- 组件遍历&渲染 -->
+  <view a:for="{{currentConfig}}" a:for-index="idx" key="idx" a:for-item="item">
+    <base-title a:if="{{item.name=='baseTitle'}}" item="{{ item }}"></base-title>
+    <base-img a:if="{{item.name=='baseImage'}}" item="{{ item }}"></base-img>
+
+    <rich-bg a:if="{{item.name=='gameRichLuckyArea'}}" gameRunning="{{ gameRunning }}" richPicUrl="{{richPicUrl}}" item="{{ item }}" idx="{{rich_idx}}"></rich-bg>
+    <rich-btn a:if="{{item.name=='gameRichBtn'}}" gameRunning="{{ gameRunning }}" luckyAward="{{luckyAward}}" actInfo="{{ actInfo }}" item="{{ item }}" onHandleRoundRun="setGameData"></rich-btn>
+
+    <huodong-fav a:if="{{item.name=='activityFavoriteshop'}}" onHandleFavorShop="handleFavorShop" item="{{ item }}"></huodong-fav>
+    <huodong-sign a:if="{{item.name=='activitySign'}}" onHandleSign="handleSign" item="{{ item }}"></huodong-sign>
+    <huodong-share a:if="{{item.name=='activityShare'}}" onHandleShare="handleShareActivity" item="{{ item }}"></huodong-share>
+    <huodong-prize a:if="{{item.name=='activityPrize'}}" awardImg="{{awardImg}}" item="{{ item }}"></huodong-prize>
+    <huodong-detail a:if="{{item.name=='activityDetail'}}" item="{{ item }}"></huodong-detail>
+    <huodong-vote a:if="{{item.name=='activityVote'}}" onHandleDetail="gotoVote" item="{{ item }}"></huodong-vote>
+    <huodong-input a:if="{{item.name=='activityInput'}}" onGotoLZ="gotoLZ" item="{{ item }}"></huodong-input>
+    <huodong-fixedbtn a:if="{{item.name=='fixedBtn'}}" onOpenShop="openShop" item="{{ item }}"></huodong-fixedbtn>
+    <huodong-myaward a:if="{{item.name=='activityMyAward'}}" onGotoMyInfo="gotoMyInfo" item="{{ item }}"></huodong-myaward>
+    <huodong-showgoods a:if="{{item.name=='activityBrowse'}}" item="{{ item }}"></huodong-showgoods>
+    <huodong-inputmsg a:if="{{item.name=='activityInput'}}" item="{{ item }}"></huodong-inputmsg>
+    <huodong-rule a:if="{{item.name=='activityRule'}}" item="{{ item }}"></huodong-rule>
+    <huodong-awardroll a:if="{{item.name=='activityAward'}}" item="{{ item }}" awardRollInfo="{{ awardRollInfo }}"></huodong-awardroll>
+    <huodong-pagebtn a:if="{{item.name=='activityPageBtn'}}" item="{{ item }}" callback={{callback}}></huodong-pagebtn>
+    <huodong-goodslist a:if="{{item.name=='goodList'}}" item="{{ item }}"></huodong-goodslist>
+    <huodong-joinmember a:if="{{item.name=='activityJoinMember'}}" item="{{ item }}"></huodong-joinmember>
+    <huodong-wangwang a:if="{{item.name=='activityWangwang'}}" item="{{ item }}"></huodong-wangwang>
+  </view>
+  <!-- 公共组件 -->
+  <huodong-common actInfo="{{ actInfo }}"></huodong-common>
+  <!-- 关闭弹窗 -->
+  <view a:if="{{showShadow}}" class="shadow" onTap="hideModal"></view>
+  <!-- 中奖弹窗 -->
+  <view a:if="{{showWin}}" class="win" style="background: url({{awardBackSrc}}) 0% 0% / 100%  no-repeat" animation="{{animationData}}">
+    <view onTap="hideModal" class="closeView">
+      <am-icon size="{{30}}" color="white" type="close-o" class="close-icon"></am-icon>
+    </view>
+    <view class="awardimg">
+      <image src="{{luckyAward.award_pic_url}}"></image>
+    </view>
+    <!--<view class="awardtitle">{{luckyAward.award_title.length>10?luckyAward.award_title.substr(0,10)+'...':luckyAward.award_title}}</view> -->
+    <view class="awardtitle">{{luckyAward.award_title}}</view>
+
+    <view a:if="{{luckyAward.is_need_address}}">
+      <button size="mini" class="gotoMyInfo" onTap="gotoMyInfo">填写领奖信息</button>
+      <view class="extinfo">不填写可能无法领取奖品</view>
+    </view>
+    <view a:if="{{luckyAward.award_type == 304}}">
+      <button size="mini" class="getTbAward" onTap="getYHQ">立即领取</button>
+    </view>
+    <!--<view a:if="{{luckyAward.award_type == 301}}"><button size="mini" class="getTbAward" data-award_per_num="{{luckyAward.award_per_num}}" onTap="getTbFlow">立即领取</button></view> -->
+    <view a:if="{{isTbAwardType}}">
+      <view class="extinfo">可至“我的-红包卡券”中查看领取的奖品</view>
+    </view>
+  </view>
+  <!-- 未中奖弹窗 -->
+  <view a:if="{{showLose}}" class="lose" style="background: url({{awardBackSrc}}) 0% 0% / 100%  no-repeat" animation="{{animationData}}">
+    <view onTap="hideModal" class="closeView">
+      <am-icon size="{{30}}" color="white" type="close-o" class="close-icon"></am-icon>
+    </view>
+    <view a:if="{{drawNoLuckyMsg}}" class="failmsg">{{drawNoLuckyMsg}}</view>
+    <view a:else class="failmsg">
+      <view>差一点点~</view>
+      <view>再接再厉勇夺奖品</view>
+    </view>
+    <!--<view class="actdetail" onTap="openMemoModal">活动说明</view> -->
+    <view class="lose-rules">
+      <view class="extinfo">完成以下任务可领取抽奖机会</view>
+      <view a:for="{{ruleAlertList}}" a:for-index="idx" key="idx" a:for-item="item">
+        <view a:if="{{item.rule_type == 211}}" class="lose-rule">
+          <view class="lose-rule-name">免费抽奖{{item.join_times}}次</view>
+          <view class="lose-rule-button"></view>
+        </view>
+        <view a:if="{{item.rule_type == 204}}" class="lose-rule">
+          <view class="lose-rule-name">订单{{item.finish_times}}笔可抽奖{{item.join_times}}次</view>
+          <view class="lose-rule-button">
+            <button size="mini" data-award_type="204" onTap="gotoBuyItem">购买宝贝</button>
+          </view>
+        </view>
+        <view a:if="{{item.rule_type == 201}}" class="lose-rule">
+          <view class="lose-rule-name">订单商品数{{item.finish_times}}件可抽奖{{item.join_times}}次</view>
+          <view class="lose-rule-button">
+            <button size="mini" data-award_type="201" onTap="gotoBuyItem">购买宝贝</button>
+          </view>
+        </view>
+        <view a:if="{{item.rule_type == 202}}" class="lose-rule">
+          <view class="lose-rule-name">订单交易额{{item.finish_times}}元可抽奖{{item.join_times}}次</view>
+          <view class="lose-rule-button">
+            <button size="mini" data-award_type="202" onTap="gotoBuyItem">购买宝贝</button>
+          </view>
+        </view>
+        <view a:if="{{item.rule_type == 203}}" class="lose-rule">
+          <view class="lose-rule-name">订单好评可抽奖{{item.join_times}}次</view>
+          <view class="lose-rule-button">
+            <button size="mini" onTap="openShop">去评价</button>
+          </view>
+        </view>
+        <!--<view a:if="{{item.rule_type == 212}}" class="lose-rule"><view class="lose-rule-name">指定昵称可抽奖</view><view class="lose-rule-button"></view></view> -->
+        <view a:if="{{item.rule_type == 221}}" class="lose-rule">
+          <view class="lose-rule-name">分享活动可抽奖{{item.join_times}}次</view>
+          <view class="lose-rule-button">
+            <button size="mini" onTap="handleShareActivity">分享活动</button>
+          </view>
+        </view>
+        <view a:if="{{item.rule_type == 213}}" class="lose-rule">
+          <view class="lose-rule-name">每日签到{{item.value.days}}天可抽奖{{item.value.join_times}}次</view>
+          <view class="lose-rule-button">
+            <button size="mini" onTap="handleSign">每日签到</button>
+          </view>
+        </view>
+        <view a:if="{{item.rule_type == 214}}" class="lose-rule">
+          <view class="lose-rule-name">关注店铺可抽奖{{item.join_times}}次</view>
+          <view class="lose-rule-button">
+            <button size="mini" onTap="handleFavorShop">关注店铺</button>
+          </view>
+        </view>
+        <view a:if="{{item.rule_type == 215}}" class="lose-rule">
+          <view class="lose-rule-name">会员可抽奖</view>
+          <view class="lose-rule-button">
+            <button size="mini" onTap="joinMember">成为会员</button>
+          </view>
+        </view>
+        <view a:if="{{item.rule_type == 222}}" class="lose-rule">
+          <view class="lose-rule-name">浏览宝贝{{item.finish_times}}笔可抽奖{{item.join_times}}次</view>
+          <view class="lose-rule-button">
+            <button size="mini" onTap="gotoHotGoods">浏览宝贝</button>
+          </view>
+        </view>
+        <view a:if="{{item.rule_type == 231}}" class="lose-rule">
+          <view class="lose-rule-name">投票规则{{item.finish_times}}次可抽奖{{item.join_times}}次</view>
+          <view class="lose-rule-button">
+            <button size="mini" onTap="gotoVote">去投票</button>
+          </view>
+        </view>
+        <view a:if="{{item.rule_type == 232}}" class="lose-rule">
+          <view class="lose-rule-name">录入信息可抽奖{{item.join_times}}次</view>
+          <view class="lose-rule-button">
+            <button size="mini" onTap="gotoLZ">录入信息</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,80 @@
+<view>
+  <view style="position:absolute;width:{{width}}rpx;height:{{height}}rpx;top:{{top}}rpx;left:0rpx;z-index:{{zindex}};background-size:100% 100%;background-repeat:no-repeat;">
+    <view class="paddingBox" style="background-color:{{themeColor}};">
+      <view class="home_product">
+        <!-- 单列 -->
+        <view a:if="{{itemStyle == 0}}">
+          <view class="list-wrapper itemA">
+            <view class="item" a:for="{{goodsList}}" a:for-item="item" a:for-index="idx">
+              <view class="img-box">
+                <image src="{{item.pic_url}}" onTap="openGoods" data-id="{{item.num_iid}}" class="pic"></image>
+              </view>
+              <view class="info">
+                <view class="hd">
+                  <view class="title line2" onTap="openGoods" data-id="{{item.num_iid}}">{{item.title}}</view>
+                </view>
+                <view class="price">
+                  <view class="num">
+                    ￥{{item.price}}
+                  </view>
+                </view>
+                <view class="fav">
+                  <image mode="widthFix" a:if="{{!item.haveFav}}" data-idx="{{idx}}" src="{{favimg}}" onTap="favGoods" data-id="{{item.num_iid}}"></image>
+                  <image mode="widthFix" a:else src="{{hadFavimg}}" data-id="{{item.num_iid}}"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- 单列 -->
+        <view a:if="{{itemStyle == 1}}">
+          <view class="list-wrapper">
+            <view class="item" a:for="{{goodsList}}" a:for-item="item" a:for-index="idx">
+              <view class="img-box">
+                <image src="{{item.pic_url}}" onTap="openGoods" data-id="{{item.num_iid}}" class="pic"></image>
+              </view>
+              <view class="info">
+                <view class="hd">
+                  <view class="title line2" onTap="openGoods" data-id="{{item.num_iid}}">{{item.title}}</view>
+                </view>
+                <view class="price">
+                  <view class="num">
+                    ￥{{item.price}}
+                  </view>
+                </view>
+                <view class="fav">
+                  <image mode="widthFix" a:if="{{!item.haveFav}}" data-idx="{{idx}}" src="{{favimg}}" onTap="favGoods" data-id="{{item.num_iid}}"></image>
+                  <image mode="widthFix" a:else src="{{hadFavimg}}" data-id="{{item.num_iid}}"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- 三列 -->
+        <view a:if="{{itemStyle == 2}}">
+          <view class="list-wrapper itemB">
+            <view class="item" a:for="{{goodsList}}" a:for-item="item" a:for-index="idx">
+              <view class="img-box">
+                <image src="{{item.pic_url}}" onTap="openGoods" data-id="{{item.num_iid}}" class="pic"></image>
+              </view>
+              <view class="info">
+                <view class="hd">
+                  <view class="title line2" onTap="openGoods" data-id="{{item.num_iid}}">{{item.title}}</view>
+                </view>
+                <view class="price">
+                  <view class="num">
+                    ￥{{item.price}}
+                  </view>
+                </view>
+                <view class="fav">
+                  <image mode="widthFix" a:if="{{!item.haveFav}}" data-idx="{{idx}}" src="{{favimg}}" onTap="favGoods" data-id="{{item.num_iid}}"></image>
+                  <image mode="widthFix" a:else src="{{hadFavimg}}" data-id="{{item.num_iid}}"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

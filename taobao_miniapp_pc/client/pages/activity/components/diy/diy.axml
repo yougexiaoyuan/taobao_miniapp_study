@@ -1,0 +1,15 @@
+<view class="padding20 font-size12">
+  温馨提示:如果不能正常显示。请复制链接，浏览器打开。<button size="default" onTap="onCopyLink" type="primary">复制</button>
+  <button size="default" class="ml10" onTap="onHelp" type="primary">游戏设置教程</button>
+  <!-- {{url}} -->
+  <view a:if="{{showVersion}}" style="width:1366px;height:1080px;overflow:auto;position:absolute;z-index:100;background:rgba(0,0,0,0.6);padding-top:150px;text-align:center">
+    <text style="color:#fff;font-size:40px;">此功能需要升级为专属版</text>
+        <view class="mt20">
+          <button style="height:40px;width:200px;font-size:18px" type="primary" onTap="onBuy">去升级专属版</button>
+        </view>
+  </view>
+  <view class="page">
+    <web-view style="width:1366px;height:1080px;overflow:auto;" mini="true" src="https://luckyhelper.kohelp.com/admin/lucky/v2_activity_setting_form?acid={{acid}}&ot=edit&shopid={{shopid}}&token={{token}}" onMessage="onmessage"></web-view>
+  </view>
+  <!-- https://luckyhelper.kohelp.com/admin/lucky/v2_activity_setting_form?acid={{acid}}&ot=edit&shopid={{shopid}}&token={{token}} -->
+</view>
