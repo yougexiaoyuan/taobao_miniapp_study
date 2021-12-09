@@ -21,15 +21,16 @@ serverless提供了API的逻辑层，数据库采用云mysql。
 2. 把适合你的代码复制到你的目录中，做调试和预览。
 3. 把测试完好提交官方审核，通过后发布到服务市场。
 4. 注册一个商家账号订购和测试线上自己小程序，这时你已经有收入了哦。哈哈
+案例展示地址：https://fuwu.taobao.com/ser/detail.htm?service_code=ts-20506
 
 ### 淘宝小程序
 淘宝服务市场创业导图
-![输入图片说明](mindimage.png)
+<p> <img src="https://github.com/yougexiaoyuan/taobao_miniapp_study/blob/main/images/mindimage.png" /></p>
 
 淘宝目前支持的云开发模式，包括元函数模式和云应用模式。云函数主要是现在云原生serverless的模式，灵活构建，弹性升级方便快速扩展。云应用就是以docker形式开发，通过容器部署，上传包管理的形式发布代码。后面我主要展示serverless的模式，因为不管从淘宝，阿里云还是其他各平台推荐来看，以后servlerless的形式将会是一个重点。
-![输入图片说明](mind1.png)
-![输入图片说明](mind2.png)
-![输入图片说明](mind3.png)
+<p> <img src="https://github.com/yougexiaoyuan/taobao_miniapp_study/blob/main/images/mind1.png" /></p>
+<p> <img src="https://github.com/yougexiaoyuan/taobao_miniapp_study/blob/main/images/mind2.png" /></p>
+<p> <img src="https://github.com/yougexiaoyuan/taobao_miniapp_study/blob/main/images/mind3.png" /></p>
 
 ### 总结
 
@@ -40,6 +41,6 @@ serverless提供了API的逻辑层，数据库采用云mysql。
 3 适合小程序和前端技术学习的朋友，开发淘宝小程序学习技术，你将会学到阿里最前沿的各种技术，没准还趁机入职阿里哦。
 
 如果有兴趣沟通学习创业朋友，可以加好友。
-![输入图片说明](76c98738055faacd2a5321b8b731376.jpg)
+<p> <img src="https://github.com/yougexiaoyuan/taobao_miniapp_study/blob/main/images/friends.png" /></p>
 
 
