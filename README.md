@@ -41,6 +41,6 @@ serverless提供了API的逻辑层，数据库采用云mysql。
 3 适合小程序和前端技术学习的朋友，开发淘宝小程序学习技术，你将会学到阿里最前沿的各种技术，没准还趁机入职阿里哦。
 
 如果有兴趣沟通学习创业朋友，可以加好友。
-<p> <img src="https://github.com/yougexiaoyuan/taobao_miniapp_study/blob/main/images/friends.png" /></p>
+<p> <img src="https://github.com/yougexiaoyuan/taobao_miniapp_study/blob/main/images/huodaxia_qr.jpg" /></p>
 
 
